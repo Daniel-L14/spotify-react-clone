@@ -1,164 +1,227 @@
-import "./App.css";
+import "./App.css"
+import { FaSpotify, FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa"
+import { MdMusicNote, MdDevices, MdLibraryMusic, MdHeadphones } from "react-icons/md"
 
 function App() {
 
-  const navLinks = ["Premium", "Soporte", "Descargar"];
+const navLinks = [
+"Premium",
+"Soporte",
+"Descargar"
+]
 
-  const footerData = [
-    {
-      title: "Compañía",
-      links: ["Acerca de", "Empleo", "For the Record"]
-    },
-    {
-      title: "Comunidades",
-      links: ["Para artistas", "Desarrolladores", "Publicidad", "Inversionistas"]
-    },
-    {
-      title: "Enlaces útiles",
-      links: ["Soporte", "App móvil gratis", "Popular por país"]
-    },
-    {
-      title: "Planes de Spotify",
-      links: [
-        "Premium Individual",
-        "Premium Duo",
-        "Premium Familiar",
-        "Premium para Estudiantes",
-        "Spotify Free"
-      ]
-    }
-  ];
+const features = [
+{
+icon: <MdMusicNote />,
+title: "Reproduce lo que quieras",
+text: "Escucha millones de canciones y podcasts."
+},
+{
+icon: <MdLibraryMusic />,
+title: "Descubre música nueva",
+text: "Encuentra playlists y artistas increíbles."
+},
+{
+icon: <MdDevices />,
+title: "Escucha en cualquier lugar",
+text: "Disponible en celular, tablet y computador."
+},
+{
+icon: <MdHeadphones />,
+title: "Calidad increíble",
+text: "Disfruta música con excelente sonido."
+}
+]
 
-  const social = ["Instagram", "Twitter", "Facebook"];
+const plans = [
+{
+name: "Individual",
+price: "$16.900 / mes",
+description: "1 cuenta Premium"
+},
+{
+name: "Duo",
+price: "$21.900 / mes",
+description: "2 cuentas Premium"
+},
+{
+name: "Familiar",
+price: "$26.900 / mes",
+description: "Hasta 6 cuentas"
+},
+{
+name: "Estudiantes",
+price: "$8.900 / mes",
+description: "Para universitarios"
+}
+]
 
-  const legal = [
-    "Legal",
-    "Centro de privacidad",
-    "Política de privacidad",
-    "Cookies",
-    "Sobre los anuncios"
-  ];
+const footerData = [
+{
+title: "Compañía",
+links:["Acerca de","Empleo","For the Record"]
+},
+{
+title:"Comunidades",
+links:["Para artistas","Desarrolladores","Publicidad","Inversionistas"]
+},
+{
+title:"Enlaces útiles",
+links:["Soporte","App móvil gratis","Popular por país"]
+}
+]
 
-  return (
-    <div className="app">
+return (
 
-      {/* NAVBAR */}
+<div>
 
-      <nav className="navbar">
+{/* NAVBAR */}
 
-        <h2 className="logo">Spotify</h2>
+<nav className="navbar">
 
-        <div className="nav-links">
-          {navLinks.map((item, index) => (
-            <span key={index}>{item}</span>
-          ))}
+<div className="logo">
+<FaSpotify size={30}/>
+<h2>Spotify</h2>
+</div>
 
-          <span className="divider">|</span>
+<div className="navLinks">
 
-          <span>Registrarse</span>
-          <span>Iniciar sesión</span>
-        </div>
+{navLinks.map((link,index)=>(
+<a key={index} href="#">{link}</a>
+))}
 
-      </nav>
+<span>|</span>
 
-      {/* HERO */}
+<a href="#">Registrarse</a>
+<a href="#">Iniciar sesión</a>
 
-      <section className="hero">
+</div>
 
-        <h1>Escucha música sin límites</h1>
+</nav>
 
-        <p>Millones de canciones y podcasts. Sin tarjeta de crédito.</p>
 
-        <button>OBTENER SPOTIFY FREE</button>
+{/* HERO */}
 
-      </section>
+<section className="hero">
 
-      {/* INFO */}
+<h1>Escucha música sin límites</h1>
 
-      <section className="info">
+<p>Millones de canciones y podcasts. Sin tarjeta de crédito.</p>
 
-        <h2>¿Por qué Spotify?</h2>
+<button>OBTENER SPOTIFY FREE</button>
 
-        <div className="info-grid">
+</section>
 
-          <div className="info-card">
-            <h3>Reproduce lo que quieras</h3>
-            <p>Escucha millones de canciones y podcasts.</p>
-          </div>
 
-          <div className="info-card">
-            <h3>Descubre música nueva</h3>
-            <p>Encuentra artistas y playlists que te encantarán.</p>
-          </div>
+{/* BENEFICIOS */}
 
-          <div className="info-card">
-            <h3>Escucha en cualquier lugar</h3>
-            <p>Disponible en móvil, tablet y computadora.</p>
-          </div>
+<section className="features">
 
-          <div className="info-card">
-            <h3>Gratis</h3>
-            <p>Disfruta música sin pagar nada.</p>
-          </div>
+<h2>¿Por qué Spotify?</h2>
 
-        </div>
+<div className="featuresGrid">
 
-      </section>
+{features.map((item,index)=>(
 
-      {/* FOOTER */}
+<div className="featureCard" key={index}>
 
-      <footer className="footer">
+<div className="icon">
+{item.icon}
+</div>
 
-        <div className="footer-container">
+<h3>{item.title}</h3>
 
-          <h2 className="logo">Spotify</h2>
+<p>{item.text}</p>
 
-          <div className="footer-columns">
+</div>
 
-            {footerData.map((section, index) => (
+))}
 
-              <div key={index} className="footer-column">
+</div>
 
-                <h4>{section.title}</h4>
+</section>
 
-                {section.links.map((link, i) => (
-                  <p key={i}>{link}</p>
-                ))}
 
-              </div>
+{/* PLANES */}
 
-            ))}
+<section className="plans">
 
-          </div>
+<h2>Elige tu plan</h2>
 
-          <div className="social">
+<div className="plansGrid">
 
-            {social.map((item, index) => (
-              <span key={index}>{item}</span>
-            ))}
+{plans.map((plan,index)=>(
 
-          </div>
+<div className="planCard" key={index}>
 
-        </div>
+<h3>{plan.name}</h3>
 
-        <div className="footer-bottom">
+<h4>{plan.price}</h4>
 
-          <div className="legal">
+<p>{plan.description}</p>
 
-            {legal.map((item, index) => (
-              <span key={index}>{item}</span>
-            ))}
+<button>Elegir plan</button>
 
-          </div>
+</div>
 
-          <p>© 2026 Spotify AB</p>
+))}
 
-        </div>
+</div>
 
-      </footer>
+</section>
 
-    </div>
-  );
+
+{/* FOOTER */}
+
+<footer className="footer">
+
+<div className="footerTop">
+
+<div className="logo">
+<FaSpotify size={28}/>
+<h2>Spotify</h2>
+</div>
+
+<div className="footerColumns">
+
+{footerData.map((section,index)=>(
+
+<div key={index}>
+
+<h4>{section.title}</h4>
+
+{section.links.map((link,i)=>(
+<p key={i}>{link}</p>
+))}
+
+</div>
+
+))}
+
+</div>
+
+<div className="social">
+
+<FaInstagram/>
+<FaTwitter/>
+<FaFacebook/>
+
+</div>
+
+</div>
+
+<div className="footerBottom">
+
+<p>© 2026 Spotify AB</p>
+
+</div>
+
+</footer>
+
+</div>
+
+)
+
 }
 
-export default App;
+export default App
