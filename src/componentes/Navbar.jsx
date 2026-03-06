@@ -1,22 +1,25 @@
-const Navbar = () => {
+import "./Navbar.css"
+function Navbar(){
 
 const menu = [
-{ name: "Premium" },
-{ name: "Support" },
-{ name: "Download" },
-{ name: "Sign up" },
-{ name: "Log in" }
+"Premium",
+"Support",
+"Download",
+"Sign up",
+"Log in"
 ]
 
-return (
+return(
 <nav className="navbar">
-<h2 className="logo">Spotify</h2>
 
-<ul>
-{menu.map((item, index) => (
-<li key={index}>{item.name}</li>
+<div className="logo">Spotify</div>
+
+<div className="menu">
+{menu.map((item,index)=>(
+<a key={index}>{item}</a>
 ))}
-</ul>
+</div>
+
 </nav>
 )
 }

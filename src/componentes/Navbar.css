@@ -1,0 +1,36 @@
+.navbar {
+width: 100%;
+background: black;
+padding: 20px 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+/* Esto lo deja fijo arriba (estático) */
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+box-sizing: border-box;
+}
+
+.logo {
+color: #1DB954;
+font-size: 28px;
+font-weight: bold;
+}
+
+.menu {
+display: flex;
+gap: 30px;
+}
+
+.menu a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+}
+
+.menu a:hover{
+color:#1DB954;
+}
