@@ -1,14 +1,13 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* Limpieza total y color de fondo de la app */
+body, html, #root {
+margin: 0;
+padding: 0;
+background-color: #000000; /* Fondo negro Spotify */
+color: #ffffff;
+font-family: 'Circular Sp', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
 }
 
-body{
-font-family: Arial, sans-serif;
-margin-top: 80px;
-}
-#root{
-  width: 100%;
-  min-height: 100vh;
+* {
+box-sizing: border-box;
 }
