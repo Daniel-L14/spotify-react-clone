@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+.sp-player {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 1000;
+  font-family: 'DM Sans', sans-serif;
+  backdrop-filter: blur(20px);
+}
+
+/* LEFT: Track Info */
+.sp-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.sp-cover {
+  width: 56px; height: 56px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #1db954 0%, #169c46 50%, #0d6e30 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(29,185,84,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-cover::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+
+.sp-track-meta { min-width: 0; }
+
+.sp-track-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+.sp-track-name:hover { text-decoration: underline; }
+
+.sp-track-artist {
+  color: #a7a7a7;
+  font-size: 12px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.sp-track-artist:hover { color: #fff; text-decoration: underline; }
+
+.sp-like-btn {
+  background: none; border: none; cursor: pointer;
+  color: #a7a7a7; padding: 4px; margin-left: 4px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s ease; border-radius: 50%;
+  width: 32px; height: 32px; flex-shrink: 0;
+}
+.sp-like-btn:hover { color: #fff; transform: scale(1.08); }
+.sp-like-btn.liked { color: #1db954; }
+.sp-like-btn svg { width: 16px; height: 16px; }
+
+/* CENTER: Controls */
+.sp-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-ctrl-btn {
+  background: none; border: none;
+  color: #a7a7a7; cursor: pointer;
+  padding: 4px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; width: 32px; height: 32px;
+  transition: all 0.15s ease;
+}
+.sp-ctrl-btn:hover { color: #fff; transform: scale(1.08); }
+.sp-ctrl-btn.active { color: #1db954; }
+.sp-ctrl-btn svg { width: 16px; height: 16px; }
+
+.sp-play-btn {
+  background: #fff;
+  border: none; cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s ease;
+  color: #000;
+  flex-shrink: 0;
+}
+.sp-play-btn:hover { transform: scale(1.06); background: #f0f0f0; }
+.sp-play-btn svg { width: 14px; height: 14px; }
+
+/* Progress Bar */
+.sp-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.sp-time {
+  color: #a7a7a7;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  width: 36px;
+  flex-shrink: 0;
+}
+.sp-time:last-child { text-align: right; }
+
+.sp-bar {
+  flex: 1;
+  height: 4px;
+  background: #535353;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: height 0.1s ease;
+}
+.sp-bar:hover { height: 6px; }
+.sp-bar:hover .sp-handle { opacity: 1; }
+
+.sp-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.1s ease;
+  pointer-events: none;
+}
+.sp-bar:hover .sp-fill { background: #1db954; }
+
+.sp-handle {
+  width: 12px; height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: -6px; top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+/* RIGHT: Volume */
+.sp-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.sp-vol-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sp-vol-bar {
+  width: 93px; height: 4px;
+  background: #535353;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: height 0.1s ease;
+}
+.sp-vol-bar:hover { height: 6px; }
+
+.sp-vol-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+  transition: background 0.1s ease;
+}
+.sp-vol-bar:hover .sp-vol-fill { background: #1db954; }
