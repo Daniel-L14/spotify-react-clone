@@ -4,7 +4,7 @@ import Sidebar from "./componentes/Sidebar"
 import Inicio from "./componentes/Inicio"
 import Discografia from "./componentes/Discografia"
 import Player from "./componentes/Player"  
-
+import Footer from "./componentes/Footer"
 function App() {
   return (
     <>
@@ -12,7 +12,7 @@ function App() {
       <Sidebar/>
       <Inicio/>
       <Discografia/>
-      <Player/>
+      <Player/><Footer/>
     </>
   )
 }
