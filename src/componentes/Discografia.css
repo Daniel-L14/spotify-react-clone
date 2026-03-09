@@ -1,31 +1,50 @@
-
+/* ===========================
+   SECCIONES BASE
+=========================== */
 .discografia {
   background-color: #141414;
   padding: 20px;
   border-radius: 8px;
 }
-.artistas .imagen-container img {
-  width: 100%;
-  border-radius: 50%;   /* 👈 círculo */
-  margin-bottom: 10px;
-  display: block;
-  object-fit: cover;    /* 👈 asegura que se recorte bien */
-}
-
 
 .incluye-inicio {
-  background-color: #141414; /* mismo fondo */
+  background-color: #141414;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 40px;           /* separación respecto a la sección anterior */
+  margin-top: 40px;
 }
 
 .descubrir {
-  background-color: #141414; /* mismo fondo */
+  background-color: #141414;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 40px;           /* separación respecto a la sección anterior */
+  margin-top: 40px;
 }
+
+.artistas {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.apareceen {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.informacion {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+/* ===========================
+   TÍTULOS
+=========================== */
 .titulo-seccion {
   font-size: 22px;
   font-weight: bold;
@@ -33,9 +52,12 @@
   padding-left: 60px;
   color: #fff;
   position: relative;
-  left: 210px;  
+  left: 210px;
 }
 
+/* ===========================
+   TABS
+=========================== */
 .tabs {
   display: inline-flex;
   gap: 15px;
@@ -66,6 +88,9 @@
   border: none;
 }
 
+/* ===========================
+   PORTADAS GRID (default)
+=========================== */
 .portadas-resumidas {
   display: flex;
   justify-content: flex-start;
@@ -75,19 +100,77 @@
   left: 270px;
 }
 
+/* ===========================
+   SCROLL HORIZONTAL
+=========================== */
+.scroll-horizontal {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 14px;
+  /* Limitar ancho para que no se desborde fuera del contenedor */
+  max-width: calc(100vw - 310px);
+}
+
+.scroll-horizontal .card-disco {
+  min-width: 160px;
+  max-width: 160px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Scrollbar estilizada */
+.scroll-horizontal::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-horizontal::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+.scroll-horizontal::-webkit-scrollbar-thumb {
+  background: #1db954;
+  border-radius: 4px;
+}
+
+/* ===========================
+   CARD DISCO
+=========================== */
 .card-disco {
   text-align: center;
   width: 180px;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
+
+.card-disco:hover {
+  transform: scale(1.03);
+}
+
+.card-disco h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card-disco p {
   font-size: 14px;
   color: #b3b3b3;
-  line-height: 1.2;   /* 👈 reduce el espacio entre líneas */
-  margin: 2px 0;      /* 👈 menos margen arriba y abajo */
+  line-height: 1.2;
+  margin: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-
+/* ===========================
+   IMAGEN CONTAINER + OVERLAY
+=========================== */
 .imagen-container {
   position: relative;
   width: 100%;
@@ -100,7 +183,6 @@
   display: block;
 }
 
-/* Overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -112,7 +194,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-/* Overlay específico para artistas */
+
 .artistas .overlay {
   position: absolute;
   top: 0;
@@ -120,14 +202,22 @@
   width: 100%;
   height: 135%;
   background-color: rgba(77, 77, 77, 0.2);
-  border-radius: 6px;
+  border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.3s ease;                             /* 👈 ajusta al círculo */
+  transition: opacity 0.3s ease;
 }
 
+.imagen-container:hover .overlay {
+  opacity: 1;
+}
 
+.imagen-container:hover .play-icon {
+  transform: scale(1.2);
+}
 
-/* Ícono circular verde con triángulo negro */
+/* ===========================
+   PLAY ICON
+=========================== */
 .play-icon {
   position: relative;
   left: 130px;
@@ -153,75 +243,40 @@
   margin-left: 3px;
 }
 
-.imagen-container:hover .overlay {
-  opacity: 1;
-}
-
-.imagen-container:hover .play-icon {
-  transform: scale(1.2);
-}
-
-.card-disco h3 {
-  font-size: 16px;
-  margin: 5px 0;
-  color: #fff; /* 👈 título en blanco */
-}
-
-.card-disco p {
-  font-size: 14px;
-  color: #b3b3b3; /* 👈 descripción en gris */
-}
-
-
-.artistas {
-  background-color: #141414; /* mismo fondo */
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 40px;
-}
-
+/* ===========================
+   ARTISTAS — imagen circular
+=========================== */
+.imagen-redonda img,
+.artistas .imagen-container img,
 .imagen-artista {
   width: 100%;
-  border-radius: 50%;   /* 👈 hace la foto circular */
+  border-radius: 50% !important;
   margin-bottom: 10px;
   display: block;
-  object-fit: cover;    /* 👈 asegura que se recorte bien dentro del círculo */
+  object-fit: cover;
+  object-position: top center;
 }
 
-.apareceen {
-  background-color: #141414; /* mismo fondo */
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 40px;
-}
-
-.informacion {
-  background-color: #141414;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 40px;
-}
-
-/* Imagen más grande */
+/* ===========================
+   SECCIÓN INFORMACIÓN
+=========================== */
 .informacion .imagen-container img {
-  width: 600px;       /* 👈 ajusta a tu gusto */
+  width: 600px;
   height: auto;
   border-radius: 8px;
   display: block;
 }
 
-/* Contenedor relativo */
 .informacion .imagen-container {
   position: relative;
   display: inline-block;
 }
 
-/* Texto dentro de la imagen como cuadro ancho */
 .informacion .texto-en-imagen {
-  position: absolute;   /* 👈 mejor que relative */
-  bottom: 90px;         /* 👈 distancia desde abajo */
-  left: 40px;           /* 👈 distancia desde la izquierda */
-  width: 200%;           /* 👈 ancho del cuadro de texto */
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  width: 200%;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -229,14 +284,13 @@
   text-align: left;
 }
 
-/* Bloque de descripción debajo de la imagen */
 .informacion .descripcion {
   position: relative;
-        text-align: left;
-        margin-top: 10px;  
-        left: 50px;
-        bottom: 115px;
-        height: 0px;          /* 👈 altura fija del cuadro */
-        width: 220%;   /* 👈 mismo ancho que la imagen */
-        color: #fff
+  text-align: left;
+  margin-top: 10px;
+  left: 50px;
+  bottom: 115px;
+  height: 0px;
+  width: 220%;
+  color: #fff;
 }
