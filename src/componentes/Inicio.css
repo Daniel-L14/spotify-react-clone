@@ -1,6 +1,6 @@
 .inicio{
   color:white;
-  background:linear-gradient(#3a2f35,#000);
+  background:linear-gradient(#3a382f,#141414);
   min-height:100vh;
   padding-bottom:40px;
 
@@ -12,7 +12,7 @@
 /* HERO */
 
 .hero{
-  background-image:url("https://images.unsplash.com/photo-1505740420928-5e560c06d30e");
+  background-image:url("https://scontent-bog2-2.xx.fbcdn.net/v/t1.6435-9/140304208_248795423372186_818600878606372830_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=afCkhZ_7UIoQ7kNvwFYk9Ce&_nc_oc=Adnia8T6FaEfZzbUec1KLfSoNV4PiK-L-ZfKQG0GlpzfPCsXPiuFl5kwfAhBkLhHBDo&_nc_zt=23&_nc_ht=scontent-bog2-2.xx&_nc_gid=ph0XAjrL7W_7sM0OX2heyw&_nc_ss=8&oh=00_AfwbCKhU_7EioCK8Rp0PoPcMJ73eSoeEgj1jpDVR6qhTuA&oe=69D60261");
   height:250px;
   background-size:cover;
   background-position:center;

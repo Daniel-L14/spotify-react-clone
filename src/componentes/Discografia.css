@@ -1,0 +1,242 @@
+
+.discografia {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 8px;
+}
+.artistas .imagen-container img {
+  width: 100%;
+  border-radius: 50%;   /* 👈 círculo */
+  margin-bottom: 10px;
+  display: block;
+  object-fit: cover;    /* 👈 asegura que se recorte bien */
+}
+
+
+.incluye-inicio {
+  background-color: #141414; /* mismo fondo */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;           /* separación respecto a la sección anterior */
+}
+
+.descubrir {
+  background-color: #141414; /* mismo fondo */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;           /* separación respecto a la sección anterior */
+}
+.titulo-seccion {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-left: 60px;
+  color: #fff;
+  position: relative;
+  left: 210px;  
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  left: 270px;
+}
+
+.tabs button {
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  font-weight: bold;
+}
+
+.tabs button:hover:not(.active) {
+  background: #535353;
+  border: none;
+}
+
+.portadas-resumidas {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  position: relative;
+  left: 270px;
+}
+
+.card-disco {
+  text-align: center;
+  width: 180px;
+  position: relative;
+}
+.card-disco p {
+  font-size: 14px;
+  color: #b3b3b3;
+  line-height: 1.2;   /* 👈 reduce el espacio entre líneas */
+  margin: 2px 0;      /* 👈 menos margen arriba y abajo */
+}
+
+
+.imagen-container {
+  position: relative;
+  width: 100%;
+}
+
+.imagen-container img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  background-color: rgba(77, 77, 77, 0.2);
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+/* Overlay específico para artistas */
+.artistas .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 135%;
+  background-color: rgba(77, 77, 77, 0.2);
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;                             /* 👈 ajusta al círculo */
+}
+
+
+
+/* Ícono circular verde con triángulo negro */
+.play-icon {
+  position: relative;
+  left: 130px;
+  top: 127px;
+  width: 40px;
+  height: 40px;
+  background-color: #20ec68;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.play-icon::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid #000;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 3px;
+}
+
+.imagen-container:hover .overlay {
+  opacity: 1;
+}
+
+.imagen-container:hover .play-icon {
+  transform: scale(1.2);
+}
+
+.card-disco h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #fff; /* 👈 título en blanco */
+}
+
+.card-disco p {
+  font-size: 14px;
+  color: #b3b3b3; /* 👈 descripción en gris */
+}
+
+
+.artistas {
+  background-color: #141414; /* mismo fondo */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.imagen-artista {
+  width: 100%;
+  border-radius: 50%;   /* 👈 hace la foto circular */
+  margin-bottom: 10px;
+  display: block;
+  object-fit: cover;    /* 👈 asegura que se recorte bien dentro del círculo */
+}
+
+.apareceen {
+  background-color: #141414; /* mismo fondo */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.informacion {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+/* Imagen más grande */
+.informacion .imagen-container img {
+  width: 600px;       /* 👈 ajusta a tu gusto */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Contenedor relativo */
+.informacion .imagen-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Texto dentro de la imagen como cuadro ancho */
+.informacion .texto-en-imagen {
+  position: absolute;   /* 👈 mejor que relative */
+  bottom: 90px;         /* 👈 distancia desde abajo */
+  left: 40px;           /* 👈 distancia desde la izquierda */
+  width: 200%;           /* 👈 ancho del cuadro de texto */
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+/* Bloque de descripción debajo de la imagen */
+.informacion .descripcion {
+  position: relative;
+        text-align: left;
+        margin-top: 10px;  
+        left: 50px;
+        bottom: 115px;
+        height: 0px;          /* 👈 altura fija del cuadro */
+        width: 220%;   /* 👈 mismo ancho que la imagen */
+        color: #fff
+}
